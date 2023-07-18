@@ -33,16 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              const Flexible(
-                child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Image(
-                      height: 300,
-                      width: 320,
-                      fit:BoxFit.fill,
-                      image: AssetImage("bakeryimg.png"),
-                    )),
-              ),
+              const Align(
+                  alignment: Alignment.topCenter,
+                  child: Image(
+                    height: 300,
+                    width: 320,
+                    fit:BoxFit.fill,
+                    image: AssetImage("bakeryimg.png"),
+                  )),
               const SizedBox(height: 20),
               const Flexible(
                 child: Text(

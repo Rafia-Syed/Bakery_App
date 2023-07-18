@@ -26,15 +26,13 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Flexible(
-                        child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image(
-                                height: 300,
-                                width: 300,
-                                image: AssetImage('cake.png')
-                                )),
-                      ),
+                      const Align(
+                          alignment: Alignment.topCenter,
+                          child: Image(
+                              height: 300,
+                              width: 300,
+                              image: AssetImage('cake.png')
+                              )),
                       Flexible(
                         child: Center(
                           child: Container(
