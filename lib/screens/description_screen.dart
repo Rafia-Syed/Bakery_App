@@ -14,23 +14,11 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
-      ),
       body: Stack(
-        fit: StackFit.expand,
         children: [
           Column(
             children: [
-              Expanded(
+              Flexible(
                 child: Container(
                   height: size.height,
                   width: size.width,
@@ -38,41 +26,45 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Align(
-                          alignment: Alignment.topCenter,
-                          child: Image(
-                              height: 300,
-                              width: 300,
-                              image: AssetImage('cake.png')
-                              )),
-                      Center(
-                        child: Container(
-                          height: size.height * 0.06,
-                          width: size.width * 0.36,
-                          decoration: const BoxDecoration(
-                              color: Color(0xffF88456),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30),
-                              )),
-                          child: LabelledCounter(
-                              onDecrementPressed: () {
-                                setState(() {
-                                  if (item >= 1) {
-                                    item--;
-                                  }
-                                });
-                              },
-                              value: item,
-                              onIncrementPressed: () {
-                                setState(() {
-                                  item++;
-                                });
-                              }),
+                      const Flexible(
+                        child: Align(
+                            alignment: Alignment.topCenter,
+                            child: Image(
+                                height: 300,
+                                width: 300,
+                                image: AssetImage('cake.png')
+                                )),
+                      ),
+                      Flexible(
+                        child: Center(
+                          child: Container(
+                            height: size.height * 0.06,
+                            width: size.width * 0.36,
+                            decoration: const BoxDecoration(
+                                color: Color(0xffF88456),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  topRight: Radius.circular(30),
+                                  bottomLeft: Radius.circular(30),
+                                )),
+                            child: LabelledCounter(
+                                onDecrementPressed: () {
+                                  setState(() {
+                                    if (item > 1) {
+                                      item--;
+                                    }
+                                  });
+                                },
+                                value: item,
+                                onIncrementPressed: () {
+                                  setState(() {
+                                    item++;
+                                  });
+                                }),
+                          ),
                         ),
                       ),
-                      const Expanded(
+                      const Flexible(
                         child: Center(
                           child: Text(
                             "Birthday Cake",
@@ -88,7 +80,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+                padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
                 height: size.height * 0.4,
                 width: size.width,
                 decoration: const BoxDecoration(
@@ -100,7 +92,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Expanded(
+                    const Flexible(
                       child: Text(
                         "Description: Strawberry cake is a cake that uses strawberry as a primary ingredient. a strawberry filling in between the layers of a layer cake. Fresh or frozen strawberries may be used. Some may utilize strawberry-flavored gelatin as an ingredient, it's decorated with donuts, grapes, macaron , chocolate needle and happy birthday words",
                         style: TextStyle(fontSize: 18, color: Colors.white),
@@ -112,7 +104,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                     const SizedBox(
                       height: 60,
                     ),
-                    Expanded(
+                    Flexible(
                       child: Row(
                         children: [
                           SizedBox(
